@@ -152,8 +152,7 @@ function MapScreen() {
   return (
     <div
       style={{
-        height: "100vh",
-        width: "100vw",
+        height: "90vh"
       }}
       ref={mapRef}
     ></div>
