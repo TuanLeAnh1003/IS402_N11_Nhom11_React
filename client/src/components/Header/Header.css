@@ -18,10 +18,10 @@
 }
 
 .header > .header__items {
-  width: 50%;
+  width: 75%;
 }
 
-.header > .header__items > li {
-  list-style-type: none;
+.header > .header__items > a {
+  text-decoration: none;
 }
 

@@ -4,6 +4,7 @@ import visitPic from "../../assets/imgs/Rectangle 1.png";
 import "bootstrap/dist/css/bootstrap.min.css";
 import News from "../../components/News/News";
 import "./Visit.css";
+import { Link } from 'react-router-dom'
 
 function Visit() {
   return (
@@ -47,7 +48,7 @@ function Visit() {
       <News />
       <News isReverse />
       <News />
-      <button>Xác nhận</button>
+      <Link to="/map-screen">Xem bản đồ 3D</Link>
     </div>
   );
 }

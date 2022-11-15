@@ -11,6 +11,8 @@ import Visit from "./pages/Visit/Visit";
 import Ticket from "./pages/Ticket/Ticket";
 import Contact from "./pages/Contact/Contact";
 import Introduce from "./pages/Introduce/Introduce";
+import Admin from "./pages/AdminPage/Admin/Admin";
+import Transaction from "./pages/AdminPage/Transaction/Transaction";
 
 function App() {
   return (
@@ -24,6 +26,7 @@ function App() {
         <Route path="visit" element={<Visit />} />
         <Route path="introduce" element={<Introduce />} />
         <Route path="contact" element={<Contact />} />
+        <Route path="admin/*" element={<Admin />} />
       </Routes>
       <Footer />
     </div>
