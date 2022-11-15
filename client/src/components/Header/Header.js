@@ -24,12 +24,16 @@ function Header() {
         <div className="header__logo">logo</div>
 
         <ul className="header__items">
-          <li>Giới Thiệu</li>
+          <Link to="/">Trang chủ</Link>
           <Link to="/map-screen">Bản Đồ 3D</Link>
           <Link to="/show">Chương Trình Biểu Diễn</Link>
-          <li>Liên Hệ</li>
-          <button onClick={handleOpenLogin}>Đăng Nhập</button>
-          <button onClick={handleOpenSignup}>Đăng Ký</button>
+          <Link to="/visit">Tham quan</Link>
+          <Link to="/introduce">Giới Thiệu</Link>
+          <Link to="/contact">Liên Hệ</Link>
+          <div>
+            <button onClick={handleOpenLogin}>Đăng Nhập</button>
+            <button onClick={handleOpenSignup}>Đăng Ký</button>
+          </div>
         </ul>
       </div>
       {

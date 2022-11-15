@@ -1,0 +1,45 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "Building name": "Layer2 - Nền 2",
+                "height": 0.00000001,
+                "color": "#cdcdcd",
+                "idb": "2"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [106.70296045845079, 10.776619770898881, 12.98],
+                        [106.70330302624741,10.77661977071077, 12.98],
+                        [106.70330302624741,10.77717411254866, 20],
+                        [106.7029604578199,10.77717411236054, 20]
+                    ]
+                ]
+            },
+            "id": "pp1"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Building name": "Layer2 - Nền 2",
+                "height": 10,
+                "color": "#cdcdcd",
+                "idb": "2"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [106.7029604578199,10.77717411236054, 12.98],
+                        [106.70330302624741,10.77717411254866, 12.98]
+                    ]
+                ]
+            },
+            "id": "pp1"
+        }
+    ]
+}

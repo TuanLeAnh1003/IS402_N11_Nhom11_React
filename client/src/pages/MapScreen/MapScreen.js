@@ -8,6 +8,13 @@ import Layer3Layer3FrontImport from "../../api/layer3/layer3_front/layer3_front.
 import Layer3Layer3BackImport from "../../api/layer3/layer3_back/layer3_back.geojson";
 import Layer3Layer3LeftImport from "../../api/layer3/layer3_left/layer3_left.geojson";
 import Layer3Layer3RightImport from "../../api/layer3/layer3_right/layer3_right.geojson";
+import Layer4Layer4BackImport from "../../api/layer4/layer4_back/layer4_back.geojson";
+import Layer4Layer4ColumnsImport from "../../api/layer4/layer4_columns/layer4_columns.geojson";
+import Layer4Layer4ColumnsEntranceImport from "../../api/layer4/layer4_columnsEntrance/layer4_columnsEntrance.geojson";
+import Layer4Layer4FrontImport from "../../api/layer4/layer4_front/layer4_front.geojson";
+import Layer4Layer4BLeftImport from "../../api/layer4/layer4_left/layer4_left.geojson";
+import Layer4Layer4RightImport from "../../api/layer4/layer4_right/layer4_right.geojson";
+import Layer4Layer4WallGateImport from "../../api/layer4/layer4_wallGate/layer4_wallGate.geojson";
 import { setDefaultOptions, loadModules } from "esri-loader";
 
 function MapScreen() {
@@ -120,6 +127,139 @@ function MapScreen() {
           },
         });
 
+        const Layer4Layer4Back = new GeoJSONLayer({
+          url: Layer4Layer4BackImport,
+          renderer: {
+            type: "simple",
+            symbol: {
+              type: "polygon-3d",
+              symbolLayers: [
+                {
+                  type: "extrude",
+                  size: 9.7,
+                  material: {
+                    color: "#c7c1b8",
+                  },
+                },
+              ],
+            },
+          },
+        });
+
+        const Layer4Layer4Columns = new GeoJSONLayer({
+          url: Layer4Layer4ColumnsImport,
+          renderer: {
+            type: "simple",
+            symbol: {
+              type: "polygon-3d",
+              symbolLayers: [
+                {
+                  type: "extrude",
+                  size: 9.7,
+                  material: {
+                    color: "gray",
+                  },
+                },
+              ],
+            },
+          },
+        });
+
+        const Layer4Layer4ColumnsEntrance = new GeoJSONLayer({
+          url: Layer4Layer4ColumnsEntranceImport,
+          renderer: {
+            type: "simple",
+            symbol: {
+              type: "polygon-3d",
+              symbolLayers: [
+                {
+                  type: "extrude",
+                  size: 4.43,
+                  material: {
+                    color: "#c0c0bf",
+                  },
+                },
+              ],
+            },
+          },
+        });
+
+        const Layer4Layer4Front = new GeoJSONLayer({
+          url: Layer4Layer4FrontImport,
+          renderer: {
+            type: "simple",
+            symbol: {
+              type: "polygon-3d",
+              symbolLayers: [
+                {
+                  type: "extrude",
+                  size: 9.7,
+                  material: {
+                    color: "#c7c1b8",
+                  },
+                },
+              ],
+            },
+          },
+        });
+
+        const Layer4Layer4BLeft = new GeoJSONLayer({
+          url: Layer4Layer4BLeftImport,
+          renderer: {
+            type: "simple",
+            symbol: {
+              type: "polygon-3d",
+              symbolLayers: [
+                {
+                  type: "extrude",
+                  size: 9.7,
+                  material: {
+                    color: "#c7c1b8",
+                  },
+                },
+              ],
+            },
+          },
+        });
+
+        const Layer4Layer4Right = new GeoJSONLayer({
+          url: Layer4Layer4RightImport,
+          renderer: {
+            type: "simple",
+            symbol: {
+              type: "polygon-3d",
+              symbolLayers: [
+                {
+                  type: "extrude",
+                  size: 9.7,
+                  material: {
+                    color: "#c7c1b8",
+                  },
+                },
+              ],
+            },
+          },
+        });
+
+        const Layer4Layer4WallGate = new GeoJSONLayer({
+          url: Layer4Layer4WallGateImport,
+          renderer: {
+            type: "simple",
+            symbol: {
+              type: "polygon-3d",
+              symbolLayers: [
+                {
+                  type: "extrude",
+                  size: 12.02,
+                  material: {
+                    color: "#c7c1b8",
+                  },
+                },
+              ],
+            },
+          },
+        });
+
         const map = new Map({
           basemap: "topo-vector",
           ground: "world-elevation",
@@ -129,6 +269,13 @@ function MapScreen() {
             layer3Layer3Back,
             layer3Layer3Left,
             layer3Layer3Right,
+            Layer4Layer4Back,
+            // Layer4Layer4Columns,
+            Layer4Layer4ColumnsEntrance,
+            Layer4Layer4Front,
+            Layer4Layer4BLeft,
+            Layer4Layer4Right,
+            Layer4Layer4WallGate,
           ],
         });
 

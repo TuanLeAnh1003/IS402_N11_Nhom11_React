@@ -1,6 +1,6 @@
 import React from "react";
 import "./News.css";
-import img from "../Assets/imgs/nha_hat_tp.jpg";
+import img from "../../assets/imgs/nha_hat_tp.jpg";
 
 function News({ isReverse }) {
   return (
