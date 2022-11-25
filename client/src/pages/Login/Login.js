@@ -50,8 +50,8 @@ function Login({ setShowLogin, handleOpenSignup, setIsLogin }) {
                     <input type="email" placeholder="Email" onChange={e => setEmail(e.target.value)} />
                     <div className="signIn_password">
                         <input type={showPassword ? "text" : "password"} placeholder="Mật khẩu" onChange={e => setPassword(e.target.value)} />
-                        {!showPassword && <div onClick={() => setShowPassword(!showPassword)}><FontAwesomeIcon icon={solid('eye')} /></div>}
-                        {showPassword && <div onClick={() => setShowPassword(!showPassword)}><FontAwesomeIcon icon={solid('eye-slash')} /></div>}
+                        {!showPassword && <div onClick={() => setShowPassword(!showPassword)}><FontAwesomeIcon style={{ color: "#000" }} icon={solid('eye')} /></div>}
+                        {showPassword && <div onClick={() => setShowPassword(!showPassword)}><FontAwesomeIcon style={{ color: "#000" }} icon={solid('eye-slash')} /></div>}
                     </div>
                     <div className="signIn_check">
                         <input type="checkbox" name="remember" />

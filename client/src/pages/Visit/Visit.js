@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Carousel from "react-bootstrap/Carousel";
 import visitPic from "../../assets/imgs/Rectangle 1.png";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -7,6 +7,9 @@ import "./Visit.css";
 import { Link } from 'react-router-dom'
 
 function Visit() {
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [])
   return (
     <div className="visit">
       <Carousel>

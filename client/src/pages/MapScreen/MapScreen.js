@@ -4,6 +4,16 @@ import MapView from "@arcgis/core/views/MapView";
 import GeoJSONLayer from "@arcgis/core/layers/GeoJSONLayer";
 import SceneView from "@arcgis/core/views/SceneView";
 import Layer1Layer1Import from "../../api/layer1/layer1.geojson";
+import Layer1Stairs1Import from '../../api/layer1/stairs1.geojson'
+import Layer2Layer2BackImport from "../../api/layer2/layer2_back/layer2_back.geojson";
+import Layer2Layer2BackInImport from "../../api/layer2/layer2_back/layer2_back_in.geojson";
+import Layer2Layer2FrontImport from "../../api/layer2/layer2_front/layer2_front.geojson";
+import Layer2Layer2FrontInImport from "../../api/layer2/layer2_front/layer2_front_in.geojson";
+import Layer2Layer2LeftImport from "../../api/layer2/layer2_left/layer2_left.geojson";
+import Layer2Layer2LeftInImport from "../../api/layer2/layer2_left/layer2_left_in.geojson";
+import Layer2Layer2RightImport from "../../api/layer2/layer2_right/layer2_right.geojson";
+import Layer2Layer2RightInImport from "../../api/layer2/layer2_right/layer2_right_in.geojson";
+
 import Layer3Layer3FrontImport from "../../api/layer3/layer3_front/layer3_front.geojson";
 import Layer3Layer3BackImport from "../../api/layer3/layer3_back/layer3_back.geojson";
 import Layer3Layer3LeftImport from "../../api/layer3/layer3_left/layer3_left.geojson";
@@ -44,6 +54,177 @@ function MapScreen() {
                   size: 1.98,
                   material: {
                     color: "#9f8c78",
+                  },
+                },
+              ],
+            },
+          },
+        });
+
+        const Layer1Stairs1 = new GeoJSONLayer({
+          url: Layer1Stairs1Import,
+          renderer: {
+            type: "simple",
+            symbol: {
+              type: "polygon-3d",
+              symbolLayers: [
+                {
+                  type: "extrude",
+                  size: 0.11,
+                  material: {
+                    color: "#666666",
+                  },
+                },
+              ],
+            },
+          },
+        });
+
+        const Layer2Layer2Back = new GeoJSONLayer({
+          url: Layer2Layer2BackImport,
+          renderer: {
+            type: "simple",
+            symbol: {
+              type: "polygon-3d",
+              symbolLayers: [
+                {
+                  type: "extrude",
+                  size: 0,
+                  material: {
+                    color: "#cdcdcd",
+                  },
+                },
+              ],
+            },
+          },
+        });
+
+        const Layer2Layer2BackIn = new GeoJSONLayer({
+          url: Layer2Layer2BackInImport,
+          renderer: {
+            type: "simple",
+            symbol: {
+              type: "polygon-3d",
+              symbolLayers: [
+                {
+                  type: "extrude",
+                  size: 1.12,
+                  material: {
+                    color: "#cdcdcd",
+                  },
+                },
+              ],
+            },
+          },
+        });
+
+        const Layer2Layer2Front = new GeoJSONLayer({
+          url: Layer2Layer2FrontImport,
+          renderer: {
+            type: "simple",
+            symbol: {
+              type: "polygon-3d",
+              symbolLayers: [
+                {
+                  type: "extrude",
+                  size: 0,
+                  material: {
+                    color: "#cdcdcd",
+                  },
+                },
+              ],
+            },
+          },
+        });
+
+        const Layer2Layer2FrontIn = new GeoJSONLayer({
+          url: Layer2Layer2FrontInImport,
+          renderer: {
+            type: "simple",
+            symbol: {
+              type: "polygon-3d",
+              symbolLayers: [
+                {
+                  type: "extrude",
+                  size: 1.12,
+                  material: {
+                    color: "#cdcdcd",
+                  },
+                },
+              ],
+            },
+          },
+        });
+
+        const Layer2Layer2Left = new GeoJSONLayer({
+          url: Layer2Layer2LeftImport,
+          renderer: {
+            type: "simple",
+            symbol: {
+              type: "polygon-3d",
+              symbolLayers: [
+                {
+                  type: "extrude",
+                  size: 0,
+                  material: {
+                    color: "#cdcdcd",
+                  },
+                },
+              ],
+            },
+          },
+        });
+
+        const Layer2Layer2LeftIn = new GeoJSONLayer({
+          url: Layer2Layer2LeftInImport,
+          renderer: {
+            type: "simple",
+            symbol: {
+              type: "polygon-3d",
+              symbolLayers: [
+                {
+                  type: "extrude",
+                  size: 1.12,
+                  material: {
+                    color: "#cdcdcd",
+                  },
+                },
+              ],
+            },
+          },
+        });
+
+        const Layer2Layer2Right = new GeoJSONLayer({
+          url: Layer2Layer2RightImport,
+          renderer: {
+            type: "simple",
+            symbol: {
+              type: "polygon-3d",
+              symbolLayers: [
+                {
+                  type: "extrude",
+                  size: 0,
+                  material: {
+                    color: "#cdcdcd",
+                  },
+                },
+              ],
+            },
+          },
+        });
+
+        const Layer2Layer2RightIn = new GeoJSONLayer({
+          url: Layer2Layer2RightInImport,
+          renderer: {
+            type: "simple",
+            symbol: {
+              type: "polygon-3d",
+              symbolLayers: [
+                {
+                  type: "extrude",
+                  size: 1.12,
+                  material: {
+                    color: "#cdcdcd",
                   },
                 },
               ],
@@ -276,6 +457,15 @@ function MapScreen() {
             Layer4Layer4BLeft,
             Layer4Layer4Right,
             Layer4Layer4WallGate,
+            Layer1Stairs1,
+            Layer2Layer2Back,
+            Layer2Layer2BackIn,
+            Layer2Layer2Front,
+            Layer2Layer2FrontIn,
+            Layer2Layer2Left,
+            Layer2Layer2LeftIn,
+            Layer2Layer2Right,
+            Layer2Layer2RightIn,
           ],
         });
 

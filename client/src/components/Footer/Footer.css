@@ -13,10 +13,20 @@
 .footer > .footer__items {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  width: 1000px;
 }
 
-.footer > .footer__items > li {
-  list-style-type: none;
+.footer > .footer__items > a {
+  text-decoration: none;
   padding: 0 10px;
+  color: #fff
+}
+
+.footer > .footer__items > a:hover {
+  color: gray;
+}
+
+.footer > img {
+  height: 80px;
 }

@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Ticket.css";
 import ticket from "../../assets/imgs/ticket.png";
 
 function Ticket() {
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [])
   return (
     <div className="ticket">
       <h2 className="ticket__title">
