@@ -3,6 +3,7 @@ import "./Header.css";
 import { Link, useNavigate } from "react-router-dom"
 import Login from "../../pages/Login/Login";
 import Signup from "../../pages/Signup/Signup";
+import Logo from '../../assets/imgs/GISDATCH.png'
 
 function Header() {
   const [showLogin, setShowLogin] = useState(false)
@@ -38,7 +39,9 @@ function Header() {
   return (
     <div className="header-bg">
       <div className="header">
-        <div className="header__logo">logo</div>
+        <div className="header__logo">
+          <img src={Logo} alt="Logo" />
+        </div>
 
         <ul className="header__items">
           <Link to="/">Trang chủ</Link>

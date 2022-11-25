@@ -1,8 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Introduce.css";
 
 function Introduce() {
   const [content, setContent] = useState("history");
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [])
 
   const handleOnClick = (e) => {
     setContent(e.target.id);

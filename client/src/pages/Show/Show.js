@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Button from 'react-bootstrap/Button';
 import ShowItem from './ShowItem';
 import ShowImage from '../../assets/imgs/showImage.png'
@@ -48,9 +48,13 @@ function Show() {
         }
     ]
 
+    useEffect(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, [])
+
     return (
         <div>
-            <div className="show__background" style={{ backgroundImage: `url('${ShowImage}')`}}>
+            <div className="show__background" style={{ backgroundImage: `url('${ShowImage}')` }}>
                 <div>
                     <div>
                         <h1>CHƯƠNG TRÌNH VÀ ĐẶT VÉ</h1>
@@ -73,7 +77,7 @@ function Show() {
                     <Col xs={8} className="show__background-body-wrapper--left">
                         {
                             showList?.map((showItem, index) => (
-                                <ShowItem 
+                                <ShowItem
                                     key={index}
                                     img={showItem.img}
                                     name={showItem.name}

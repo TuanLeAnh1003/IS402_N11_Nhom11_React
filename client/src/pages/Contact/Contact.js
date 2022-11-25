@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Contact.css";
 import Carousel from "react-bootstrap/Carousel";
 import visitPic from "../../assets/imgs/Rectangle 1.png";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function Contact() {
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [])
   return (
     <div className="contact">
       <Carousel>

@@ -2,7 +2,7 @@ import "./App.css";
 import MapScreen from "./pages/MapScreen/MapScreen";
 import { Route, Routes, useNavigate } from "react-router-dom";
 import Home from "./pages/Home/Home";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "../src/components/Header/Header";
 import Footer from "../src/components/Footer/Footer";
 import Show from "./pages/Show/Show";
@@ -15,6 +15,11 @@ import Admin from "./pages/AdminPage/Admin/Admin";
 import Transaction from "./pages/AdminPage/Transaction/Transaction";
 
 function App() {
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [])
+
   return (
     <div className="App">
       <Header />
