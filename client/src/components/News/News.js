@@ -7,14 +7,13 @@ function News({ isReverse }) {
     <div className={isReverse ? "news reverse" : "news"}>
       <img src={img} alt="Nha hat thanh pho" />
       <div className="news__des">
-        <h3>Libero sed iaculis pellentesque</h3>
+        <h3>Tổng quan về Nhà hát</h3>
         <p>
-          Quisque auctor est ac velit luctus fermentum. Nulla condimentum,
-          libero sed iaculis pellentesque, massa urna mollis mauris, in egestas
-          sem nisi ac arcu. Nulla facilisi. In sit amet vehicula massa. Nulla
-          facilisi. In sit amet vehicula massa. Nulla facilisi. In sit amet
-          vehicula massa. Nulla facilisi. In sit amet vehicula massa. Nulla
-          facilisi. In sit amet vehicula massa.{" "}
+          Nhà hát Thành phố Hồ Chí Minh (gọi tắt là Nhà hát Thành phố HCM, Nhà
+          hát TPHCM) là một trong những công trình lâu đời theo kiến trúc châu
+          Âu tại Sài Gòn.Với 1800 ghế, không khí thoáng và hệ thống âm thanh,
+          ánh sáng hiện đại, Nhà hát là nơi tổ chức các chương trình biểu diễn
+          sân khấu chuyên nghiệp như kịch nói, cải lương, opera, múa bale,....{" "}
         </p>
       </div>
     </div>
