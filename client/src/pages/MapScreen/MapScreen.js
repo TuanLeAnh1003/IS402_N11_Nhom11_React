@@ -26,6 +26,8 @@ import Layer4Layer4BLeftImport from "../../api/layer4/layer4_left/layer4_left.ge
 import Layer4Layer4RightImport from "../../api/layer4/layer4_right/layer4_right.geojson";
 import Layer4Layer4WallGateImport from "../../api/layer4/layer4_wallGate/layer4_wallGate.geojson";
 import { setDefaultOptions, loadModules } from "esri-loader";
+import './MapScreen.css'
+import { Link } from 'react-router-dom'
 
 function MapScreen() {
   const mapRef = useRef();
@@ -487,12 +489,36 @@ function MapScreen() {
   }, []);
 
   return (
-    <div
-      style={{
-        height: "90vh"
-      }}
-      ref={mapRef}
-    ></div>
+    <div className="map_screen">
+      <div
+        style={{
+          height: "90vh"
+        }}
+        ref={mapRef}
+      ></div>
+      <div className="map_screen-popup">
+        <h5>Xem Nhà hát TPHCM</h5>
+        <p>Công Trường Lam Sơn, Bến Nghé, Quận 1</p>
+        <div className="map_screen-popup--item">
+          <h5>Xem thông tin tòa nhà</h5>
+          <p>Là một nhà hát có mặt tiền hướng ra Công trường Lam Sơn và đường Đồng Khởi, Quận 1, Thành phố Hồ Chí Minh.</p>
+          <button>
+            <Link to="/show" style={{ textDecoration: "none", color: "#fff" }}>
+              Xem chương trình biểu diễn
+            </Link>
+          </button>
+        </div>
+        <div className="map_screen-popup--item">
+          <h5>Đặt vé ngay</h5>
+          <p>Giá vé tùy thuộc vào chương trình bạn xem và tùy thuộc vào chỗ ngồi.</p>
+          <button>
+            <Link to="/ticket" style={{ textDecoration: "none", color: "#fff" }}>
+              Đặt vé
+            </Link>
+          </button>
+        </div>
+      </div>
+    </div>
   );
 }
 
