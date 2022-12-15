@@ -10,26 +10,32 @@ import layer1Decors_up_backImport from "../../api/layer1/decors/decors_up.geojso
 import layer1Decors_sharp_brick_backImport from "../../api/layer1/decors/decors_sharp_brick.geojson"
 import layer1Decors_tomb_backImport from "../../api/layer1/decors/decors_tomb.geojson"
 
-import Layer2Layer2BackImport from "../../api/layer2/layer2_back/layer2_back.geojson";
-import Layer2Layer2BackInImport from "../../api/layer2/layer2_back/layer2_back_in.geojson";
-import Layer2Layer2FrontImport from "../../api/layer2/layer2_front/layer2_front.geojson";
-import Layer2Layer2FrontInImport from "../../api/layer2/layer2_front/layer2_front_in.geojson";
-import Layer2Layer2LeftImport from "../../api/layer2/layer2_left/layer2_left.geojson";
-import Layer2Layer2LeftInImport from "../../api/layer2/layer2_left/layer2_left_in.geojson";
-import Layer2Layer2RightImport from "../../api/layer2/layer2_right/layer2_right.geojson";
-import Layer2Layer2RightInImport from "../../api/layer2/layer2_right/layer2_right_in.geojson";
+import Layer2Layer2Import from "../../api/layer2/layer2.geojson";
+import Layer2Layer2InImport from "../../api/layer2/layer2_in.geojson";
 
-import Layer3Layer3FrontImport from "../../api/layer3/layer3_front/layer3_front.geojson";
-import Layer3Layer3BackImport from "../../api/layer3/layer3_back/layer3_back.geojson";
-import Layer3Layer3LeftImport from "../../api/layer3/layer3_left/layer3_left.geojson";
-import Layer3Layer3RightImport from "../../api/layer3/layer3_right/layer3_right.geojson";
-import Layer4Layer4BackImport from "../../api/layer4/layer4_back/layer4_back.geojson";
+// LAYER 3
+import Layer3Layer3Import from "../../api/layer3/layer3.geojson";
+
+// LAYER 4
+import Layer4Layer4Import from "../../api/layer4/layer4.geojson";
 import Layer4Layer4ColumnsImport from "../../api/layer4/layer4_columns/layer4_columns.geojson";
-import Layer4Layer4ColumnsEntranceImport from "../../api/layer4/layer4_columnsEntrance/layer4_columnsEntrance.geojson";
-import Layer4Layer4FrontImport from "../../api/layer4/layer4_front/layer4_front.geojson";
-import Layer4Layer4BLeftImport from "../../api/layer4/layer4_left/layer4_left.geojson";
-import Layer4Layer4RightImport from "../../api/layer4/layer4_right/layer4_right.geojson";
-import Layer4Layer4WallGateImport from "../../api/layer4/layer4_wallGate/layer4_wallGate.geojson";
+import layer4Layer4_windowBalconyPianoLeftImport from "../../api/layer4/layer4_window_balcony/window_balcony_piano.geojson"
+import layer4Layer4_windowBalconyBigPianoLeftImport from "../../api/layer4/layer4_window_balcony/window_balcony_big_piano.geojson"
+import layer4Layer4_windowBalconyDecorsLeftImport from "../../api/layer4/layer4_window_balcony/window_balcony_decors.geojson"
+import layer4Stick_rightImport from "../../api/layer4/layer4_stick/stick_right.geojson"
+import layer4MonkeyStick_rightImport from "../../api/layer4/layer4_stick/monkeystick_right.geojson"
+import layer4WorkshipImport from "../../api/layer4/worshipphoto/workship.geojson"
+import layer4RoodImport from "../../api/layer4/worshipphoto/rood.geojson"
+import layer4PhotoImport from "../../api/layer4/worshipphoto/photo.geojson"
+// Cổng chính
+import Layer4Layer4ColumnsEntranceImport from "../../api/layer4/layer4_entrance/layer4_columnsEntrance.geojson";
+import Layer4Layer4WallGateImport from "../../api/layer4/layer4_entrance/layer4_wallGate.geojson";
+// Ban công cổng chính
+import layer4Layer4_balcony_smallcrossbarImport from "../../api/layer4/layer4_entrance/balcony_entrance/layer4_balcony_smallcrossbar.geojson";
+import layer4Layer4_balcony_crossbarImport from "../../api/layer4/layer4_entrance/balcony_entrance/layer4_balcony_crossbar.geojson";
+import layer4Layer4_balcony_onbarImport from "../../api/layer4/layer4_entrance/balcony_entrance/layer4_balcony_onbar.geojson";
+import layer4Layer4_balconyImport from "../../api/layer4/layer4_entrance/balcony_entrance/layer4_balcony.geojson";
+import layer4Layer4_balcony_glassImport from "../../api/layer4/layer4_entrance/balcony_entrance/layer4_balcony_glass.geojson";
 import { setDefaultOptions, loadModules } from "esri-loader";
 import './MapScreen.css'
 import { Link } from 'react-router-dom'
@@ -163,8 +169,8 @@ function MapScreen() {
           },
         });
 
-        const Layer2Layer2Back = new GeoJSONLayer({
-          url: Layer2Layer2BackImport,
+        const Layer2Layer2 = new GeoJSONLayer({
+          url: Layer2Layer2Import,
           renderer: {
             type: "simple",
             symbol: {
@@ -182,8 +188,8 @@ function MapScreen() {
           },
         });
 
-        const Layer2Layer2BackIn = new GeoJSONLayer({
-          url: Layer2Layer2BackInImport,
+        const Layer2Layer2In = new GeoJSONLayer({
+          url: Layer2Layer2InImport,
           renderer: {
             type: "simple",
             symbol: {
@@ -201,122 +207,8 @@ function MapScreen() {
           },
         });
 
-        const Layer2Layer2Front = new GeoJSONLayer({
-          url: Layer2Layer2FrontImport,
-          renderer: {
-            type: "simple",
-            symbol: {
-              type: "polygon-3d",
-              symbolLayers: [
-                {
-                  type: "extrude",
-                  size: 0,
-                  material: {
-                    color: "#cdcdcd",
-                  },
-                },
-              ],
-            },
-          },
-        });
-
-        const Layer2Layer2FrontIn = new GeoJSONLayer({
-          url: Layer2Layer2FrontInImport,
-          renderer: {
-            type: "simple",
-            symbol: {
-              type: "polygon-3d",
-              symbolLayers: [
-                {
-                  type: "extrude",
-                  size: 1.12,
-                  material: {
-                    color: "#cdcdcd",
-                  },
-                },
-              ],
-            },
-          },
-        });
-
-        const Layer2Layer2Left = new GeoJSONLayer({
-          url: Layer2Layer2LeftImport,
-          renderer: {
-            type: "simple",
-            symbol: {
-              type: "polygon-3d",
-              symbolLayers: [
-                {
-                  type: "extrude",
-                  size: 0,
-                  material: {
-                    color: "#cdcdcd",
-                  },
-                },
-              ],
-            },
-          },
-        });
-
-        const Layer2Layer2LeftIn = new GeoJSONLayer({
-          url: Layer2Layer2LeftInImport,
-          renderer: {
-            type: "simple",
-            symbol: {
-              type: "polygon-3d",
-              symbolLayers: [
-                {
-                  type: "extrude",
-                  size: 1.12,
-                  material: {
-                    color: "#cdcdcd",
-                  },
-                },
-              ],
-            },
-          },
-        });
-
-        const Layer2Layer2Right = new GeoJSONLayer({
-          url: Layer2Layer2RightImport,
-          renderer: {
-            type: "simple",
-            symbol: {
-              type: "polygon-3d",
-              symbolLayers: [
-                {
-                  type: "extrude",
-                  size: 0,
-                  material: {
-                    color: "#cdcdcd",
-                  },
-                },
-              ],
-            },
-          },
-        });
-
-        const Layer2Layer2RightIn = new GeoJSONLayer({
-          url: Layer2Layer2RightInImport,
-          renderer: {
-            type: "simple",
-            symbol: {
-              type: "polygon-3d",
-              symbolLayers: [
-                {
-                  type: "extrude",
-                  size: 1.12,
-                  material: {
-                    color: "#cdcdcd",
-                  },
-                },
-              ],
-            },
-          },
-        });
-
-        const layer3Layer3Front = new GeoJSONLayer({
-          url: Layer3Layer3FrontImport,
+        const layer3Layer3 = new GeoJSONLayer({
+          url: Layer3Layer3Import,
           renderer: {
             type: "simple",
             symbol: {
@@ -334,65 +226,8 @@ function MapScreen() {
           },
         });
 
-        const layer3Layer3Back = new GeoJSONLayer({
-          url: Layer3Layer3BackImport,
-          renderer: {
-            type: "simple",
-            symbol: {
-              type: "polygon-3d",
-              symbolLayers: [
-                {
-                  type: "extrude",
-                  size: 1.2,
-                  material: {
-                    color: "#C8C2BA",
-                  },
-                },
-              ],
-            },
-          },
-        });
-
-        const layer3Layer3Left = new GeoJSONLayer({
-          url: Layer3Layer3LeftImport,
-          renderer: {
-            type: "simple",
-            symbol: {
-              type: "polygon-3d",
-              symbolLayers: [
-                {
-                  type: "extrude",
-                  size: 1.2,
-                  material: {
-                    color: "#C8C2BA",
-                  },
-                },
-              ],
-            },
-          },
-        });
-
-        const layer3Layer3Right = new GeoJSONLayer({
-          url: Layer3Layer3RightImport,
-          renderer: {
-            type: "simple",
-            symbol: {
-              type: "polygon-3d",
-              symbolLayers: [
-                {
-                  type: "extrude",
-                  size: 1.2,
-                  material: {
-                    color: "#C8C2BA",
-                  },
-                },
-              ],
-            },
-          },
-        });
-
-        const Layer4Layer4Back = new GeoJSONLayer({
-          url: Layer4Layer4BackImport,
+        const Layer4Layer4 = new GeoJSONLayer({
+          url: Layer4Layer4Import,
           renderer: {
             type: "simple",
             symbol: {
@@ -421,7 +256,7 @@ function MapScreen() {
                   type: "extrude",
                   size: 9.7,
                   material: {
-                    color: "gray",
+                    color: "#aaa494",
                   },
                 },
               ],
@@ -429,6 +264,209 @@ function MapScreen() {
           },
         });
 
+        // Mẫu
+        const layer4Layer4_windowBalconyPianoLeft = new GeoJSONLayer({
+          url: layer4Layer4_windowBalconyPianoLeftImport,
+          renderer: {
+            type: "simple",
+            symbol: {
+              type: "line-3d",
+              symbolLayers: [
+                {
+                  type: "path",
+                  profile: "quad",
+                  width: 0.39,
+                  height: 0.24,
+                  material: {
+                    color: "#aaa494",
+                  },
+                  join: "miter",
+                  cap: "butt",
+                  profileRotation: "heading",
+                  anchor: "bottom",
+                },
+              ],
+            },
+          },
+        });
+
+        const layer4Layer4_windowBalconyBigPianoLeft = new GeoJSONLayer({
+          url: layer4Layer4_windowBalconyBigPianoLeftImport,
+          renderer: {
+            type: "simple",
+            symbol: {
+              type: "line-3d",
+              symbolLayers: [
+                {
+                  type: "path",
+                  profile: "quad",
+                  width: 0.2,
+                  height: 0.97,
+                  material: {
+                    color: "#CBC5BC",
+                  },
+                  join: "miter",
+                  cap: "butt",
+                  profileRotation: "heading",
+                  anchor: "bottom",
+                },
+              ],
+            },
+          },
+        });
+
+        const layer4Layer4_windowBalconyDecorsLeft = new GeoJSONLayer({
+          url: layer4Layer4_windowBalconyDecorsLeftImport,
+          renderer: {
+            type: "simple",
+            symbol: {
+              type: "line-3d",
+              symbolLayers: [
+                {
+                  type: "path",
+                  profile: "quad",
+                  width: 0.001,
+                  height: 0.13,
+                  material: {
+                    color: "#BEBEBE",
+                  },
+                  join: "miter",
+                  cap: "butt",
+                  profileRotation: "heading",
+                  anchor: "bottom",
+                },
+              ],
+            },
+          },
+        });
+
+        const layer4Stick_right = new GeoJSONLayer({
+          url: layer4Stick_rightImport,
+          renderer: {
+            type: "simple",
+            symbol: {
+              type: "line-3d",
+              symbolLayers: [
+                {
+                  type: "path",
+                  profile: "quad",
+                  height: 0.08,
+                  width: 0.06,
+                  material: {
+                    color: "#C0C0BF",
+                  },
+                  join: "miter",
+                  cap: "butt",
+                  profileRotation: "heading",
+                  anchor: "bottom",
+                },
+              ],
+            },
+          },
+        });
+
+        const layer4MonkeyStick_right = new GeoJSONLayer({
+          url: layer4MonkeyStick_rightImport,
+          renderer: {
+            type: "simple",
+            symbol: {
+              type: "line-3d",
+              symbolLayers: [
+                {
+                  type: "path",
+                  profile: "quad",
+                  height: 0.08,
+                  width: 0.06,
+                  material: {
+                    color: "#C0C0BF",
+                  },
+                  join: "miter",
+                  cap: "butt",
+                  profileRotation: "heading",
+                  anchor: "bottom",
+                },
+              ],
+            },
+          },
+        });
+
+        const layer4Workship = new GeoJSONLayer({
+          url: layer4WorkshipImport,
+          renderer: {
+            type: "simple",
+            symbol: {
+              type: "line-3d",
+              symbolLayers: [
+                {
+                  type: "path",
+                  profile: "quad",
+                  height: 0.09,
+                  width: 0.06,
+                  material: {
+                    color: "#cdcdcd",
+                  },
+                  join: "miter",
+                  cap: "butt",
+                  profileRotation: "heading",
+                  anchor: "bottom",
+                },
+              ],
+            },
+          },
+        });
+
+        const layer4Rood = new GeoJSONLayer({
+          url: layer4RoodImport,
+          renderer: {
+            type: "simple",
+            symbol: {
+              type: "line-3d",
+              symbolLayers: [
+                {
+                  type: "path",
+                  profile: "quad",
+                  height: 4.65,
+                  width: 0.06,
+                  material: {
+                    color: "#cdcdcd",
+                  },
+                  join: "miter",
+                  cap: "butt",
+                  profileRotation: "heading",
+                  anchor: "bottom",
+                },
+              ],
+            },
+          },
+        });
+
+        const layer4Photo = new GeoJSONLayer({
+          url: layer4PhotoImport,
+          renderer: {
+            type: "simple",
+            symbol: {
+              type: "line-3d",
+              symbolLayers: [
+                {
+                  type: "path",
+                  profile: "quad",
+                  height: 4.65,
+                  width: 0.01,
+                  material: {
+                    color: [128, 128, 128, 0.5],
+                  },
+                  join: "miter",
+                  cap: "butt",
+                  profileRotation: "heading",
+                  anchor: "bottom",
+                },
+              ],
+            },
+          },
+        });
+
+        // --- Cổng chính ---
+        // Cột cổng chính
         const Layer4Layer4ColumnsEntrance = new GeoJSONLayer({
           url: Layer4Layer4ColumnsEntranceImport,
           renderer: {
@@ -438,7 +476,7 @@ function MapScreen() {
               symbolLayers: [
                 {
                   type: "extrude",
-                  size: 4.43,
+                  size: 0.73,
                   material: {
                     color: "#c0c0bf",
                   },
@@ -448,63 +486,7 @@ function MapScreen() {
           },
         });
 
-        const Layer4Layer4Front = new GeoJSONLayer({
-          url: Layer4Layer4FrontImport,
-          renderer: {
-            type: "simple",
-            symbol: {
-              type: "polygon-3d",
-              symbolLayers: [
-                {
-                  type: "extrude",
-                  size: 9.7,
-                  material: {
-                    color: "#c7c1b8",
-                  },
-                },
-              ],
-            },
-          },
-        });
-
-        const Layer4Layer4BLeft = new GeoJSONLayer({
-          url: Layer4Layer4BLeftImport,
-          renderer: {
-            type: "simple",
-            symbol: {
-              type: "polygon-3d",
-              symbolLayers: [
-                {
-                  type: "extrude",
-                  size: 9.7,
-                  material: {
-                    color: "#c7c1b8",
-                  },
-                },
-              ],
-            },
-          },
-        });
-
-        const Layer4Layer4Right = new GeoJSONLayer({
-          url: Layer4Layer4RightImport,
-          renderer: {
-            type: "simple",
-            symbol: {
-              type: "polygon-3d",
-              symbolLayers: [
-                {
-                  type: "extrude",
-                  size: 9.7,
-                  material: {
-                    color: "#c7c1b8",
-                  },
-                },
-              ],
-            },
-          },
-        });
-
+        // Tường cổng chính
         const Layer4Layer4WallGate = new GeoJSONLayer({
           url: Layer4Layer4WallGateImport,
           renderer: {
@@ -524,6 +506,102 @@ function MapScreen() {
           },
         });
 
+        // Ban công cổng chính
+        const layer4Layer4_balcony_smallcrossbar = new GeoJSONLayer({
+          url: layer4Layer4_balcony_smallcrossbarImport,
+          renderer: {
+            type: "simple",
+            symbol: {
+              type: "polygon-3d",
+              symbolLayers: [
+                {
+                  type: "extrude",
+                  size: 0.07,
+                  material: {
+                    color: "#cdcdcd",
+                  },
+                },
+              ],
+            },
+          },
+        });
+
+        const layer4Layer4_balcony_crossbar = new GeoJSONLayer({
+          url: layer4Layer4_balcony_crossbarImport,
+          renderer: {
+            type: "simple",
+            symbol: {
+              type: "polygon-3d",
+              symbolLayers: [
+                {
+                  type: "extrude",
+                  size: 0.16,
+                  material: {
+                    color: "#cdcdcd",
+                  },
+                },
+              ],
+            },
+          },
+        });
+
+        const layer4Layer4_balcony_onbar = new GeoJSONLayer({
+          url: layer4Layer4_balcony_onbarImport,
+          renderer: {
+            type: "simple",
+            symbol: {
+              type: "polygon-3d",
+              symbolLayers: [
+                {
+                  type: "extrude",
+                  size: 0.05,
+                  material: {
+                    color: "#604732",
+                  },
+                },
+              ],
+            },
+          },
+        });
+
+        const layer4Layer4_balcony = new GeoJSONLayer({
+          url: layer4Layer4_balconyImport,
+          renderer: {
+            type: "simple",
+            symbol: {
+              type: "polygon-3d",
+              symbolLayers: [
+                {
+                  type: "extrude",
+                  size: 0.72,
+                  material: {
+                    color: "#c7c1b8",
+                  },
+                },
+              ],
+            },
+          },
+        });
+
+        const layer4Layer4_balcony_glass = new GeoJSONLayer({
+          url: layer4Layer4_balcony_glassImport,
+          renderer: {
+            type: "simple",
+            symbol: {
+              type: "polygon-3d",
+              symbolLayers: [
+                {
+                  type: "extrude",
+                  size: 0.9,
+                  material: {
+                    color: [218, 218, 218, 0.5],
+                  },
+                },
+              ],
+            },
+          },
+        });
+
         const map = new Map({
           basemap: "topo-vector",
           ground: "world-elevation",
@@ -534,25 +612,26 @@ function MapScreen() {
             Layer1Decors_up_backImport,
             Layer1Decors_sharp_brick_backImport,
             Layer1Decors_tomb_backImport,
-            Layer2Layer2Back,
-            Layer2Layer2BackIn,
-            Layer2Layer2Front,
-            Layer2Layer2FrontIn,
-            Layer2Layer2Left,
-            Layer2Layer2LeftIn,
-            Layer2Layer2Right,
-            Layer2Layer2RightIn,
-            layer3Layer3Front,
-            layer3Layer3Back,
-            layer3Layer3Left,
-            layer3Layer3Right,
-            Layer4Layer4Back,
-            // Layer4Layer4Columns,
+            Layer2Layer2,
+            Layer2Layer2In,
+            layer3Layer3,
+            Layer4Layer4,
+            Layer4Layer4Columns,
+            layer4Layer4_windowBalconyPianoLeft,
+            layer4Layer4_windowBalconyBigPianoLeft,
+            layer4Layer4_windowBalconyDecorsLeft,
+            layer4Stick_right,
+            layer4MonkeyStick_right,
+            layer4Workship,
+            layer4Rood,
+            layer4Photo,
             Layer4Layer4ColumnsEntrance,
-            Layer4Layer4Front,
-            Layer4Layer4BLeft,
-            Layer4Layer4Right,
             Layer4Layer4WallGate,
+            layer4Layer4_balcony_smallcrossbar,
+            layer4Layer4_balcony_crossbar,
+            layer4Layer4_balcony_onbar,
+            layer4Layer4_balcony,
+            layer4Layer4_balcony_glass,
           ],
         });
 
