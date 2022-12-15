@@ -30,12 +30,43 @@ import layer4PhotoImport from "../../api/layer4/worshipphoto/photo.geojson"
 // Cổng chính
 import Layer4Layer4ColumnsEntranceImport from "../../api/layer4/layer4_entrance/layer4_columnsEntrance.geojson";
 import Layer4Layer4WallGateImport from "../../api/layer4/layer4_entrance/layer4_wallGate.geojson";
+import layer4Layer4_columnsFooterImport from "../../api/layer4/layer4_columns/layer4_columnsFooter.geojson"
+import layer4Layer4_columnsFooter_upImport from "../../api/layer4/layer4_columns/layer4_columnsFooter_up.geojson"
+import layer4Layer4_columnsHeader_belowImport from "../../api/layer4/layer4_columns/layer4_columnsHeader_below.geojson"
+import layer4Layer4_columnsHeader_aboveImport from "../../api/layer4/layer4_columns/layer4_columnsHeader_above.geojson"
 // Ban công cổng chính
 import layer4Layer4_balcony_smallcrossbarImport from "../../api/layer4/layer4_entrance/balcony_entrance/layer4_balcony_smallcrossbar.geojson";
 import layer4Layer4_balcony_crossbarImport from "../../api/layer4/layer4_entrance/balcony_entrance/layer4_balcony_crossbar.geojson";
 import layer4Layer4_balcony_onbarImport from "../../api/layer4/layer4_entrance/balcony_entrance/layer4_balcony_onbar.geojson";
 import layer4Layer4_balconyImport from "../../api/layer4/layer4_entrance/balcony_entrance/layer4_balcony.geojson";
 import layer4Layer4_balcony_glassImport from "../../api/layer4/layer4_entrance/balcony_entrance/layer4_balcony_glass.geojson";
+
+import layer4_upperRimImport from "../../api/layer4/layer4_upper/upperRim.geojson"
+import layer4UpperWindowBorder_horizontalImport from "../../api/layer4/layer4_upper/upperWindow/windowBorder_horizontal.geojson"
+import layer4UpperWindowBorder_verticalImport from "../../api/layer4/layer4_upper/upperWindow/windowBorder_vertical.geojson"
+import layer4UpperWindowMirrorImport from "../../api/layer4/layer4_upper/upperWindow/windowMirror.geojson"
+import layer4UpperWindow2Border_horizontalImport from "../../api/layer4/layer4_upper/upperWindow2/windowBorder_horizontal.geojson"
+import layer4UpperWindow2Border_verticalImport from "../../api/layer4/layer4_upper/upperWindow2/windowBorder_vertical.geojson"
+import layer4UpperWindow2_higherPlinthImport from "../../api/layer4/layer4_upper/upperWindow2/window_higherPlinth.geojson"
+import layer4UpperWindow2_lowerPlinthImport from "../../api/layer4/layer4_upper/upperWindow2/window_lowerPlinth.geojson"
+import layer4UpperWindow2MirrorImport from "../../api/layer4/layer4_upper/upperWindow2/windowMirror.geojson"
+import layer4UpperWall_surround_leftRightImport from "../../api/layer4/layer4_upper/upperWall/upperWall_leftRight/wall_surround_leftRight.geojson"
+import layer4UpperWall_beneath_leftRightImport from "../../api/layer4/layer4_upper/upperWall/upperWall_leftRight/wall_beneath_leftRight.geojson"
+import layer4UpperWall2_beneath_leftRightImport from "../../api/layer4/layer4_upper/upperWall/upperWall_leftRight/wall2_beneath_leftRight.geojson"
+import layer4UpperWall2_above_leftRightImport from "../../api/layer4/layer4_upper/upperWall/upperWall_leftRight/wall2_above_leftRight.geojson"
+import layer4UpperWall2_surround_leftRightImport from "../../api/layer4/layer4_upper/upperWall/upperWall_leftRight/wall2_surround_leftRight.geojson"
+import layer4UpperWall_above_frontBackImport from "../../api/layer4/layer4_upper/upperWall/upperWall_frontBack/wall_above_frontBack.geojson"
+import layer4UpperWall_beneath_frontBackImport from "../../api/layer4/layer4_upper/upperWall/upperWall_frontBack/wall_beneath_frontBack.geojson"
+import layer4UpperWall_surround_frontBackImport from "../../api/layer4/layer4_upper/upperWall/upperWall_frontBack/wall_surround_frontBack.geojson"
+import layer4CylinderColumn_frontImport from "../../api/layer4/layer4_columns/cylinderColumn_front.geojson"
+import layer4CylinderColumn_entranceImport from "../../api/layer4/layer4_columns/cylinderColumn_entrance.geojson"
+import layer4CylinderColumn_plinth_entranceImport from "../../api/layer4/layer4_columns/cylinderColumn_plinth_entrance.geojson"
+import layer4CylinderColumnFooter_frontImport from "../../api/layer4/layer4_columns/cylinderColumnFooter_front.geojson"
+import layer4CylinderColumnFooter_surround_frontImport from "../../api/layer4/layer4_columns/cylinderColumnFooter_surround_front.geojson"
+import layer4CylinderColumnFooter_surround_entranceImport from "../../api/layer4/layer4_columns/cylinderColumnFooter_surround_entrance.geojson"
+import layer4CylinderColumnFooter_entranceImport from "../../api/layer4/layer4_columns/cylinderColumnFooter_entrance.geojson"
+import layer4CylinderColumnHeader_entranceImport from "../../api/layer4/layer4_columns/cylinderColumnHeader_entrance.geojson"
+
 import { setDefaultOptions, loadModules } from "esri-loader";
 import './MapScreen.css'
 import { Link } from 'react-router-dom'
@@ -226,8 +257,8 @@ function MapScreen() {
           },
         });
 
-        const Layer4Layer4 = new GeoJSONLayer({
-          url: Layer4Layer4Import,
+        const layer4Layer4_columnsFooter = new GeoJSONLayer({
+          url: layer4Layer4_columnsFooterImport,
           renderer: {
             type: "simple",
             symbol: {
@@ -235,9 +266,66 @@ function MapScreen() {
               symbolLayers: [
                 {
                   type: "extrude",
-                  size: 9.7,
+                  size: 0.36,
                   material: {
-                    color: "#c7c1b8",
+                    color: "#bfbcbc",
+                  },
+                },
+              ],
+            },
+          },
+        });
+
+        const layer4Layer4_columnsHeader_below = new GeoJSONLayer({
+          url: layer4Layer4_columnsHeader_belowImport,
+          renderer: {
+            type: "simple",
+            symbol: {
+              type: "polygon-3d",
+              symbolLayers: [
+                {
+                  type: "extrude",
+                  size: 0.28,
+                  material: {
+                    color: "#bfbcbc",
+                  },
+                },
+              ],
+            },
+          },
+        });
+
+        const layer4Layer4_columnsHeader_above = new GeoJSONLayer({
+          url: layer4Layer4_columnsHeader_aboveImport,
+          renderer: {
+            type: "simple",
+            symbol: {
+              type: "polygon-3d",
+              symbolLayers: [
+                {
+                  type: "extrude",
+                  size: 0.33,
+                  material: {
+                    color: "gray",
+                  },
+                },
+              ],
+            },
+          },
+        });
+
+        const layer4Layer4_columnsFooter_up = new GeoJSONLayer({
+          url: layer4Layer4_columnsFooter_upImport,
+          renderer: {
+            type: "simple",
+            symbol: {
+              type: "polygon-3d",
+              symbolLayers: [
+                {
+                  type: "extrude",
+                  size: 0,
+                  material: {
+                    color: "#c6c7c4",
                   },
                 },
               ],
@@ -257,6 +345,329 @@ function MapScreen() {
                   size: 9.7,
                   material: {
                     color: "#aaa494",
+                  },
+                },
+              ],
+            },
+          },
+        });
+
+        const layer4_upperRim = new GeoJSONLayer({
+          url: layer4_upperRimImport,
+          renderer: {
+            type: "simple",
+            symbol: {
+              type: "polygon-3d",
+              symbolLayers: [
+                {
+                  type: "extrude",
+                  size: 0.33,
+                  material: {
+                    color: "#ccdcdcd",
+                  },
+                },
+              ],
+            },
+          },
+        });
+
+        const layer4UpperWindowBorder_horizontal = new GeoJSONLayer({
+          url: layer4UpperWindowBorder_horizontalImport,
+          renderer: {
+            type: "simple",
+            symbol: {
+              type: "polygon-3d",
+              symbolLayers: [
+                {
+                  type: "extrude",
+                  size: 0.06,
+                  material: {
+                    color: "#7A5238",
+                  },
+                },
+              ],
+            },
+          },
+        });
+
+        const layer4UpperWindowBorder_vertical = new GeoJSONLayer({
+          url: layer4UpperWindowBorder_verticalImport,
+          renderer: {
+            type: "simple",
+            symbol: {
+              type: "polygon-3d",
+              symbolLayers: [
+                {
+                  type: "extrude",
+                  size: 1.25,
+                  material: {
+                    color: "#7A5238",
+                  },
+                },
+              ],
+            },
+          },
+        });
+
+        const layer4UpperWindowMirror = new GeoJSONLayer({
+          url: layer4UpperWindowMirrorImport,
+          renderer: {
+            type: "simple",
+            symbol: {
+              type: "polygon-3d",
+              symbolLayers: [
+                {
+                  type: "extrude",
+                  size: 1.13,
+                  material: {
+                    color: "#aaaaaa",
+                  },
+                },
+              ],
+            },
+          },
+        });
+
+        const layer4UpperWindow2Border_horizontal = new GeoJSONLayer({
+          url: layer4UpperWindow2Border_horizontalImport,
+          renderer: {
+            type: "simple",
+            symbol: {
+              type: "polygon-3d",
+              symbolLayers: [
+                {
+                  type: "extrude",
+                  size: 0.06,
+                  material: {
+                    color: "#7A5238",
+                  },
+                },
+              ],
+            },
+          },
+        });
+
+        const layer4UpperWindow2Border_vertical = new GeoJSONLayer({
+          url: layer4UpperWindow2Border_verticalImport,
+          renderer: {
+            type: "simple",
+            symbol: {
+              type: "polygon-3d",
+              symbolLayers: [
+                {
+                  type: "extrude",
+                  size: 1,
+                  material: {
+                    color: "#7A5238",
+                  },
+                },
+              ],
+            },
+          },
+        });
+
+        const layer4UpperWindow2_higherPlinth = new GeoJSONLayer({
+          url: layer4UpperWindow2_higherPlinthImport,
+          renderer: {
+            type: "simple",
+            symbol: {
+              type: "polygon-3d",
+              symbolLayers: [
+                {
+                  type: "extrude",
+                  size: 0.1,
+                  material: {
+                    color: "#808080",
+                  },
+                },
+              ],
+            },
+          },
+        });
+
+        const layer4UpperWindow2_lowerPlinth = new GeoJSONLayer({
+          url: layer4UpperWindow2_lowerPlinthImport,
+          renderer: {
+            type: "simple",
+            symbol: {
+              type: "polygon-3d",
+              symbolLayers: [
+                {
+                  type: "extrude",
+                  size: 0.24,
+                  material: {
+                    color: "#aaa494",
+                  },
+                },
+              ],
+            },
+          },
+        });
+
+        const layer4UpperWindow2Mirror = new GeoJSONLayer({
+          url: layer4UpperWindow2MirrorImport,
+          renderer: {
+            type: "simple",
+            symbol: {
+              type: "polygon-3d",
+              symbolLayers: [
+                {
+                  type: "extrude",
+                  size: 0.88,
+                  material: {
+                    color: "#aaaaaa",
+                  },
+                },
+              ],
+            },
+          },
+        });
+
+        const layer4UpperWall_surround_leftRight = new GeoJSONLayer({
+          url: layer4UpperWall_surround_leftRightImport,
+          renderer: {
+            type: "simple",
+            symbol: {
+              type: "polygon-3d",
+              symbolLayers: [
+                {
+                  type: "extrude",
+                  size: 1,
+                  material: {
+                    color: "#c7c1b8",
+                  },
+                },
+              ],
+            },
+          },
+        });
+
+        const layer4UpperWall_beneath_leftRight = new GeoJSONLayer({
+          url: layer4UpperWall_beneath_leftRightImport,
+          renderer: {
+            type: "simple",
+            symbol: {
+              type: "polygon-3d",
+              symbolLayers: [
+                {
+                  type: "extrude",
+                  size: 0.87,
+                  material: {
+                    color: "#c7c1b8",
+                  },
+                },
+              ],
+            },
+          },
+        });
+
+        const layer4UpperWall2_beneath_leftRight = new GeoJSONLayer({
+          url: layer4UpperWall2_beneath_leftRightImport,
+          renderer: {
+            type: "simple",
+            symbol: {
+              type: "polygon-3d",
+              symbolLayers: [
+                {
+                  type: "extrude",
+                  size: 0.48,
+                  material: {
+                    color: "#c7c1b8",
+                  },
+                },
+              ],
+            },
+          },
+        });
+
+        const layer4UpperWall2_above_leftRight = new GeoJSONLayer({
+          url: layer4UpperWall2_above_leftRightImport,
+          renderer: {
+            type: "simple",
+            symbol: {
+              type: "polygon-3d",
+              symbolLayers: [
+                {
+                  type: "extrude",
+                  size: 0.14,
+                  material: {
+                    color: "#c7c1b8",
+                  },
+                },
+              ],
+            },
+          },
+        });
+
+        const layer4UpperWall2_surround_leftRight = new GeoJSONLayer({
+          url: layer4UpperWall2_surround_leftRightImport,
+          renderer: {
+            type: "simple",
+            symbol: {
+              type: "polygon-3d",
+              symbolLayers: [
+                {
+                  type: "extrude",
+                  size: 1.25,
+                  material: {
+                    color: "#c7c1b8",
+                  },
+                },
+              ],
+            },
+          },
+        });
+
+        const layer4UpperWall_above_frontBack = new GeoJSONLayer({
+          url: layer4UpperWall_above_frontBackImport,
+          renderer: {
+            type: "simple",
+            symbol: {
+              type: "polygon-3d",
+              symbolLayers: [
+                {
+                  type: "extrude",
+                  size: 0.14,
+                  material: {
+                    color: "#c7c1b8",
+                  },
+                },
+              ],
+            },
+          },
+        });
+
+        const layer4UpperWall_beneath_frontBack = new GeoJSONLayer({
+          url: layer4UpperWall_beneath_frontBackImport,
+          renderer: {
+            type: "simple",
+            symbol: {
+              type: "polygon-3d",
+              symbolLayers: [
+                {
+                  type: "extrude",
+                  size: 0.48,
+                  material: {
+                    color: "#c7c1b8",
+                  },
+                },
+              ],
+            },
+          },
+        });
+
+        const layer4UpperWall_surround_frontBack = new GeoJSONLayer({
+          url: layer4UpperWall_surround_frontBackImport,
+          renderer: {
+            type: "simple",
+            symbol: {
+              type: "polygon-3d",
+              symbolLayers: [
+                {
+                  type: "extrude",
+                  size: 1.87,
+                  material: {
+                    color: "#c7c1b8",
                   },
                 },
               ],
@@ -465,6 +876,25 @@ function MapScreen() {
           },
         });
 
+        const Layer4Layer4 = new GeoJSONLayer({
+          url: Layer4Layer4Import,
+          renderer: {
+            type: "simple",
+            symbol: {
+              type: "polygon-3d",
+              symbolLayers: [
+                {
+                  type: "extrude",
+                  size: 9.7,
+                  material: {
+                    color: "#c7c1b8",
+                  },
+                },
+              ],
+            },
+          },
+        });
+
         // --- Cổng chính ---
         // Cột cổng chính
         const Layer4Layer4ColumnsEntrance = new GeoJSONLayer({
@@ -602,6 +1032,170 @@ function MapScreen() {
           },
         });
 
+        const layer4CylinderColumn_front = new GeoJSONLayer({
+          url: layer4CylinderColumn_frontImport,
+          renderer: {
+            type: "simple",
+            symbol: {
+              type: "point-3d",
+              symbolLayers: [
+                {
+                  type: "object",
+                  height: 8.35,
+                  width: 1,
+                  depth: 1,
+                  material: {
+                    color: '#aaa494',
+                  },
+                  resource: { primitive: "cylinder" },
+                },
+              ],
+            },
+          },
+        });
+
+        const layer4CylinderColumn_entrance = new GeoJSONLayer({
+          url: layer4CylinderColumn_entranceImport,
+          renderer: {
+            type: "simple",
+            symbol: {
+              type: "point-3d",
+              symbolLayers: [
+                {
+                  type: "object",
+                  height: 4.13,
+                  width: 0.68,
+                  depth: 0.68,
+                  material: {
+                    color: '#aaa494',
+                  },
+                  resource: { primitive: "cylinder" },
+                },
+              ],
+            },
+          },
+        });
+
+        const layer4CylinderColumn_plinth_entrance = new GeoJSONLayer({
+          url: layer4CylinderColumn_plinth_entranceImport,
+          renderer: {
+            type: "simple",
+            symbol: {
+              type: "polygon-3d",
+              symbolLayers: [
+                {
+                  type: "extrude",
+                  size: 3.1,
+                  material: {
+                    color: '#454545',
+                  },
+                },
+              ],
+            },
+          },
+        });
+
+        const layer4CylinderColumnFooter_front = new GeoJSONLayer({
+          url: layer4CylinderColumnFooter_frontImport,
+          renderer: {
+            type: "simple",
+            symbol: {
+              type: "polygon-3d",
+              symbolLayers: [
+                {
+                  type: "extrude",
+                  size: 0.26,
+                  material: {
+                    color: '#bfbcbc',
+                  },
+                },
+              ],
+            },
+          },
+        });
+
+        const layer4CylinderColumnFooter_surround_front = new GeoJSONLayer({
+          url: layer4CylinderColumnFooter_surround_frontImport,
+          renderer: {
+            type: "simple",
+            symbol: {
+              type: "point-3d",
+              symbolLayers: [
+                {
+                  type: "object",
+                  height: 0.3,
+                  width: 1.25,
+                  depth: 1.25,
+                  material: {
+                    color: '#bfbcbc',
+                  },
+                  resource: { primitive: "cylinder" },
+                },
+              ],
+            },
+          },
+        });
+
+        const layer4CylinderColumnFooter_surround_entrance = new GeoJSONLayer({
+          url: layer4CylinderColumnFooter_surround_entranceImport,
+          renderer: {
+            type: "simple",
+            symbol: {
+              type: "point-3d",
+              symbolLayers: [
+                {
+                  type: "object",
+                  height: 0.2,
+                  width: 0.8,
+                  depth: 0.8,
+                  material: {
+                    color: '#bfbcbc',
+                  },
+                  resource: { primitive: "cylinder" },
+                },
+              ],
+            },
+          },
+        });
+
+        const layer4CylinderColumnFooter_entrance = new GeoJSONLayer({
+          url: layer4CylinderColumnFooter_entranceImport,
+          renderer: {
+            type: "simple",
+            symbol: {
+              type: "polygon-3d",
+              symbolLayers: [
+                {
+                  type: "extrude",
+                  size: 0.21,
+                  material: {
+                    color: '#bfbcbc',
+                  },
+                },
+              ],
+            },
+          },
+        });
+
+        const layer4CylinderColumnHeader_entrance = new GeoJSONLayer({
+          url: layer4CylinderColumnHeader_entranceImport,
+          renderer: {
+            type: "simple",
+            symbol: {
+              type: "polygon-3d",
+              symbolLayers: [
+                {
+                  type: "extrude",
+                  size: 0.13,
+                  material: {
+                    color: '#bfbcbc',
+                  },
+                },
+              ],
+            },
+          },
+        });
+
         const map = new Map({
           basemap: "topo-vector",
           ground: "world-elevation",
@@ -625,6 +1219,8 @@ function MapScreen() {
             layer4Workship,
             layer4Rood,
             layer4Photo,
+            layer4Layer4_columnsFooter,
+            layer4Layer4_columnsFooter_up,
             Layer4Layer4ColumnsEntrance,
             Layer4Layer4WallGate,
             layer4Layer4_balcony_smallcrossbar,
@@ -632,6 +1228,33 @@ function MapScreen() {
             layer4Layer4_balcony_onbar,
             layer4Layer4_balcony,
             layer4Layer4_balcony_glass,
+            layer4Layer4_columnsHeader_below,
+            layer4Layer4_columnsHeader_above,
+            layer4_upperRim,
+            layer4UpperWindowBorder_horizontal,
+            layer4UpperWindowBorder_vertical,
+            layer4UpperWindowMirror,
+            layer4UpperWindow2Border_horizontal,
+            layer4UpperWindow2Border_vertical,
+            layer4UpperWindow2_higherPlinth,
+            layer4UpperWindow2_lowerPlinth,
+            layer4UpperWindow2Mirror,
+            layer4UpperWall_surround_leftRight,
+            layer4UpperWall_beneath_leftRight,
+            layer4UpperWall2_beneath_leftRight,
+            layer4UpperWall2_above_leftRight,
+            layer4UpperWall2_surround_leftRight,
+            layer4UpperWall_above_frontBack,
+            layer4UpperWall_beneath_frontBack,
+            layer4UpperWall_surround_frontBack,
+            layer4CylinderColumn_front,
+            layer4CylinderColumn_entrance,
+            layer4CylinderColumn_plinth_entrance,
+            layer4CylinderColumnFooter_front,
+            layer4CylinderColumnFooter_surround_front,
+            layer4CylinderColumnFooter_surround_entrance,
+            layer4CylinderColumnFooter_entrance,
+            layer4CylinderColumnHeader_entrance,
           ],
         });
 
