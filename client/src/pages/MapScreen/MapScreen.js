@@ -121,7 +121,7 @@ function MapScreen() {
               symbolLayers: [
                 {
                   type: "extrude",
-                  size: 0.14,
+                  size: 0.12,
                   material: {
                     color: "#cdcdcd",
                   },
