@@ -5,6 +5,11 @@ import GeoJSONLayer from "@arcgis/core/layers/GeoJSONLayer";
 import SceneView from "@arcgis/core/views/SceneView";
 import Layer1Layer1Import from "../../api/layer1/layer1.geojson";
 import Layer1Stairs1Import from '../../api/layer1/stairs1.geojson'
+import layer1Decors_backImport from "../../api/layer1/decors/decors.geojson"
+import layer1Decors_up_backImport from "../../api/layer1/decors/decors_up.geojson"
+import layer1Decors_sharp_brick_backImport from "../../api/layer1/decors/decors_sharp_brick.geojson"
+import layer1Decors_tomb_backImport from "../../api/layer1/decors/decors_tomb.geojson"
+
 import Layer2Layer2BackImport from "../../api/layer2/layer2_back/layer2_back.geojson";
 import Layer2Layer2BackInImport from "../../api/layer2/layer2_back/layer2_back_in.geojson";
 import Layer2Layer2FrontImport from "../../api/layer2/layer2_front/layer2_front.geojson";
@@ -56,6 +61,82 @@ function MapScreen() {
                   size: 1.98,
                   material: {
                     color: "#9f8c78",
+                  },
+                },
+              ],
+            },
+          },
+        });
+
+        const Layer1Decors_backImport = new GeoJSONLayer({
+          url: layer1Decors_backImport,
+          renderer: {
+            type: "simple",
+            symbol: {
+              type: "polygon-3d",
+              symbolLayers: [
+                {
+                  type: "extrude",
+                  size: 1.23,
+                  material: {
+                    color: "#cdcdcd",
+                  },
+                },
+              ],
+            },
+          },
+        });
+
+        const Layer1Decors_up_backImport = new GeoJSONLayer({
+          url: layer1Decors_up_backImport,
+          renderer: {
+            type: "simple",
+            symbol: {
+              type: "polygon-3d",
+              symbolLayers: [
+                {
+                  type: "extrude",
+                  size: 0.14,
+                  material: {
+                    color: "#cdcdcd",
+                  },
+                },
+              ],
+            },
+          },
+        });
+
+        const Layer1Decors_sharp_brick_backImport = new GeoJSONLayer({
+          url: layer1Decors_sharp_brick_backImport,
+          renderer: {
+            type: "simple",
+            symbol: {
+              type: "polygon-3d",
+              symbolLayers: [
+                {
+                  type: "extrude",
+                  size: 0.14,
+                  material: {
+                    color: "#cdcdcd",
+                  },
+                },
+              ],
+            },
+          },
+        });
+
+        const Layer1Decors_tomb_backImport = new GeoJSONLayer({
+          url: layer1Decors_tomb_backImport,
+          renderer: {
+            type: "simple",
+            symbol: {
+              type: "polygon-3d",
+              symbolLayers: [
+                {
+                  type: "extrude",
+                  size: 0.38,
+                  material: {
+                    color: "#cdcdcd",
                   },
                 },
               ],
@@ -448,6 +529,19 @@ function MapScreen() {
           ground: "world-elevation",
           layers: [
             layer1Layer1,
+            Layer1Stairs1,
+            Layer1Decors_backImport,
+            Layer1Decors_up_backImport,
+            Layer1Decors_sharp_brick_backImport,
+            Layer1Decors_tomb_backImport,
+            Layer2Layer2Back,
+            Layer2Layer2BackIn,
+            Layer2Layer2Front,
+            Layer2Layer2FrontIn,
+            Layer2Layer2Left,
+            Layer2Layer2LeftIn,
+            Layer2Layer2Right,
+            Layer2Layer2RightIn,
             layer3Layer3Front,
             layer3Layer3Back,
             layer3Layer3Left,
@@ -459,15 +553,6 @@ function MapScreen() {
             Layer4Layer4BLeft,
             Layer4Layer4Right,
             Layer4Layer4WallGate,
-            Layer1Stairs1,
-            Layer2Layer2Back,
-            Layer2Layer2BackIn,
-            Layer2Layer2Front,
-            Layer2Layer2FrontIn,
-            Layer2Layer2Left,
-            Layer2Layer2LeftIn,
-            Layer2Layer2Right,
-            Layer2Layer2RightIn,
           ],
         });
 
